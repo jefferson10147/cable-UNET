@@ -11,7 +11,7 @@ class PhoneService extends Model
 
     protected $fillable = [
         'name',
-        'limit',
+        'plan_limit',
         'price',
     ];
 

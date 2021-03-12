@@ -8,6 +8,7 @@ use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PackageController;
+use App\Http\Controllers\ProgramController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +21,4 @@ Route::get('/save/channel', [ChannelController::class, 'saveChannel'])->name('ch
 Route::get('/save/invoice', [InvoiceController::class, 'saveInvoice'])->name('invoice.save');
 Route::get('/save/service', [ServiceController::class, 'saveService'])->name('service.save');
 Route::get('/save/package', [PackageController::class, 'savePackage'])->name('package.save');
+Route::get('/save/program', [ProgramController::class, 'saveProgram'])->name('program.save');

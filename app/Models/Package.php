@@ -15,4 +15,14 @@ class Package extends Model
     ];
 
     public $timestamps = false;
+
+    public function cableService()
+    {
+        return $this->belongsTo('App\Models\CableService');
+    }
+
+    public function channel()
+    {
+        return $this->belongsTo('App\Models\Channel');
+    }
 }

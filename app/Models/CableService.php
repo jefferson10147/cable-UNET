@@ -15,4 +15,9 @@ class CableService extends Model
     ];
 
     public $timestamps = false;
+
+    public function packages()
+    {
+        return $this->hasMany('App\Models\Package');
+    }
 }

@@ -21,4 +21,9 @@ class Channel extends Model
     {
         return $this->hasMany('App\Models\Program');
     }
+
+    public function packages()
+    {
+        return $this->hasMany('App\Models\Package');
+    }
 }

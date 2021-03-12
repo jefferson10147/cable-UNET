@@ -7,7 +7,7 @@ use App\Models\InternetService;
 
 class InternetServiceController extends Controller
 {
-    public function save_internet_service(Request $request)
+    public function saveInternetService(Request $request)
     {
         /*
         $internetService = InternetService::create([

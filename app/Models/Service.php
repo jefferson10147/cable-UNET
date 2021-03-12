@@ -32,4 +32,9 @@ class Service extends Model
     {
         return $this->belongsTo('App\Models\CableService');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

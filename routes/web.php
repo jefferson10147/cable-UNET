@@ -7,7 +7,6 @@ use App\Http\Controllers\CableServiceController;
 use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ServiceController;
-use App\Models\Service;
 
 Route::get('/', function () {
     return view('welcome');

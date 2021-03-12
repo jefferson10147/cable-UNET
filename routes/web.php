@@ -7,6 +7,7 @@ use App\Http\Controllers\CableServiceController;
 use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\PackageController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,3 +19,4 @@ Route::get('/save/cable_service', [CableServiceController::class, 'saveCableServ
 Route::get('/save/channel', [ChannelController::class, 'saveChannel'])->name('channel.save');
 Route::get('/save/invoice', [InvoiceController::class, 'saveInvoice'])->name('invoice.save');
 Route::get('/save/service', [ServiceController::class, 'saveService'])->name('service.save');
+Route::get('/save/package', [PackageController::class, 'savePackage'])->name('package.save');

@@ -16,4 +16,9 @@ class InternetService extends Model
     ];
 
     public $timestamps = false;
+
+    public function services()
+    {
+        return $this->hasMany('App\Models\Service');
+    }
 }

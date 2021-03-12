@@ -17,4 +17,19 @@ class Service extends Model
     ];
 
     public $timestamps = false;
+
+    public function internetService()
+    {
+        return $this->belongsTo('App\Models\InternetService');
+    }
+
+    public function phoneService()
+    {
+        return $this->belongsTo('App\Models\PhoneService');
+    }
+
+    public function cableService()
+    {
+        return $this->belongsTo('App\Models\CableService');
+    }
 }

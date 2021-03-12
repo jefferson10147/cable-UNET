@@ -20,4 +20,9 @@ class CableService extends Model
     {
         return $this->hasMany('App\Models\Package');
     }
+
+    public function services()
+    {
+        return $this->hasMany('App\Models\Service');
+    }
 }

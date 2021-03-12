@@ -18,4 +18,9 @@ class Program extends Model
     ];
 
     public $timestamps = false;
+
+    public function channel()
+    {
+        return $this->belongsTo('App\Models\Channel');
+    }
 }

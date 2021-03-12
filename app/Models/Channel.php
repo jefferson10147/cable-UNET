@@ -16,4 +16,9 @@ class Channel extends Model
     ];
 
     public $timestamps = false;
+
+    public function programs()
+    {
+        return $this->hasMany('App\Models\Program');
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\InternetServiceController;
 use App\Http\Controllers\PhoneServiceController;
 use App\Http\Controllers\CableServiceController;
@@ -26,3 +27,5 @@ Route::get('/save/program', [ProgramController::class, 'saveProgram'])->name('pr
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/programs', ProgramController::class);
+Route::resource('/channels', ChannelController::class);

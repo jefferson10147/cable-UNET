@@ -7,6 +7,11 @@ use App\Models\Channel;
 
 class ChannelController extends Controller
 {
+    public function index()
+    {
+        dd(Channel::first()->programs[0]['program_name']);
+    }
+
     public function saveChannel(Request $request)
     {
         /*

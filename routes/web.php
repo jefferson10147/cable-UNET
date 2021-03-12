@@ -22,3 +22,7 @@ Route::get('/save/invoice', [InvoiceController::class, 'saveInvoice'])->name('in
 Route::get('/save/service', [ServiceController::class, 'saveService'])->name('service.save');
 Route::get('/save/package', [PackageController::class, 'savePackage'])->name('package.save');
 Route::get('/save/program', [ProgramController::class, 'saveProgram'])->name('program.save');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

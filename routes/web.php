@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/save/internet_service', [InternetServiceController::class, 'saveInternetService'])->name('internetService.save');
+//Route::get('/save/internet_service', [InternetServiceController::class, 'saveInternetService'])->name('internetService.save');
 Route::get('/save/phone_service', [PhoneServiceController::class, 'savePhoneService'])->name('phoneService.save');
 Route::get('/save/cable_service', [CableServiceController::class, 'saveCableService'])->name('cableService.save');
 Route::get('/save/channel', [ChannelController::class, 'saveChannel'])->name('channel.save');
@@ -27,5 +27,7 @@ Route::get('/save/program', [ProgramController::class, 'saveProgram'])->name('pr
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::resource('/programs', ProgramController::class);
 Route::resource('/channels', ChannelController::class);
+Route::resource('/internet_services', InternetServiceController::class);

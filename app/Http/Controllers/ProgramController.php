@@ -26,7 +26,7 @@ class ProgramController extends Controller
      */
     public function create()
     {
-        //
+        return view('create_program');
     }
 
     /**
@@ -37,13 +37,14 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        /*
         $request->validate([
-            'channel_id' => ['required'],
-            ''
+            'date' => ['date', 'required'],
+            'program_name' => 'required',
+            'starts_at' => 'required',
+            'ends_at' => 'required'
         ]);
-        */
         Program::create($request->all());
+
         return redirect('programs/create')->with('succes', 'The program have been correctly registered');
     }
 

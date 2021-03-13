@@ -14,10 +14,10 @@ class ChannelController extends Controller
      */
     public function index()
     {
-        $channel = Channel::all();
-        dd($channel);
+        $channels = Channel::all();
+        dd($channels);
         
-        return view('channels_list', compact($channel)); 
+        return view('channels_list', compact($channels)); 
     }
 
     /**

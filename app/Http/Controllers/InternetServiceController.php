@@ -15,7 +15,7 @@ class InternetServiceController extends Controller
     public function index()
     {
         $internetServices = InternetService::all();
-        dd($internetServices);
+        // dd($internetServices);
         return view('internet_services_list', compact('internetServices'));
     }
 

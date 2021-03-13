@@ -43,3 +43,5 @@ Route::get('program/{id}/channel/{channel_id}', [ProgramController::class, 'upda
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/admin_home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminHome');
+

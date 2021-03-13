@@ -31,3 +31,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('/programs', ProgramController::class);
 Route::resource('/channels', ChannelController::class);
 Route::resource('/internet_services', InternetServiceController::class);
+Route::resource('/phone_services', PhoneServiceController::class);

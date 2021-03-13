@@ -16,7 +16,7 @@
         }
     </style>
 
-    <title>Internet Services List</title>
+    <title>Admin|Home</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,12 +35,13 @@
             <a href="{{ route('logout') }}"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button></a>
           </form>
         </div>
-      </nav>
+    </nav>
     
+    <!-- servcios de internet -->
     <div class="container">
-      <h1 class="m-5" align="center"><strong>Internet Services</strong></h1>
+      <h1 class="mt-5" align="center"><strong>Internet Services</strong></h1>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2">
         @foreach ($internetServices as $internetService)
             <div class="col">
                 <div class="card mb-4 shadow-sm">
@@ -63,6 +64,38 @@
         <div class="col text-center">
           <a href="{{ route('internet_services.create') }}">
             <button type="button" class="btn btn-primary">Añadir nuevos servicios de internet</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- servcios de teléfono -->
+    <div class="container mt-5">
+      <h1  align="center"><strong>Phone Services</strong></h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2">
+        @foreach ($phoneServices as $phoneService)
+            <div class="col">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                      <h1 class="my-0 fw-normal">{{ ucfirst($phoneService->name) }}</h1>
+                    </div>
+
+                    <div class="card-body">
+                      <h2 class="card-title pricing-card-title">${{ $phoneService->price }} <small class="text-muted">/ mo</small></h2>
+                      <h3 class="card-title pricing-card-title">{{ $phoneService->plan_limit }} <small class="text-muted"></small></h3>
+                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Get it now</button>
+                    </div>
+                </div>
+            </div>   
+        @endforeach
+    </div> 
+
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a href="{{ route('phone_services.create') }}">
+            <button type="button" class="btn btn-primary">Añadir nuevos servicios de telefonía</button>
           </a>
         </div>
       </div>

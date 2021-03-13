@@ -46,7 +46,7 @@
             <div class="col">
                 <div class="card mb-4 shadow-sm">
                     <div class="card-header">
-                      <h1 class="my-0 fw-normal">{{ ucfirst($service->name) }}</h1>
+                      <h1 class="my-0 fw-normal">{{ ucfirst($service->service_name) }}</h1>
                     </div>
 
                     <div class="card-body">
@@ -94,7 +94,7 @@
       <div class="row">
         <div class="col text-center">
           <a href="{{ route('internet_services.create') }}">
-            <button type="button" class="btn btn-primary">Añadir nuevos servicios de internet</button>
+            <button type="button" class="btn btn-primary">Create new internet services</button>
           </a>
         </div>
       </div>
@@ -126,7 +126,7 @@
       <div class="row">
         <div class="col text-center">
           <a href="{{ route('phone_services.create') }}">
-            <button type="button" class="btn btn-primary">Añadir nuevos servicios de telefonía</button>
+            <button type="button" class="btn btn-primary">Create new phone services</button>
           </a>
         </div>
       </div>
@@ -158,7 +158,7 @@
       <div class="row">
         <div class="col text-center">
           <a href="{{ route('cable_services.create') }}">
-            <button type="button" class="btn btn-primary">Añadir nuevos servicios de cable</button>
+            <button type="button" class="btn btn-primary">Create new cable services</button>
           </a>
         </div>
       </div>

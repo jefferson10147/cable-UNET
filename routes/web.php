@@ -33,3 +33,4 @@ Route::resource('/channels', ChannelController::class);
 Route::resource('/internet_services', InternetServiceController::class);
 Route::resource('/phone_services', PhoneServiceController::class);
 Route::resource('/cable_services', CableServiceController::class);
+Route::resource('/services', ServiceController::class);

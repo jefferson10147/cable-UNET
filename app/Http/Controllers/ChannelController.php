@@ -17,7 +17,7 @@ class ChannelController extends Controller
         $channels = Channel::all();
         dd($channels);
         
-        return view('channels_list', compact($channels)); 
+        return view('channels_list', compact('channels')); 
     }
 
     /**

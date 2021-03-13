@@ -78,7 +78,7 @@ class CableServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($id, 'update');
     }
 
     /**
@@ -89,6 +89,6 @@ class CableServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dd($id, 'delete');
     }
 }

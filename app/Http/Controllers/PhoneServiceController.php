@@ -79,7 +79,7 @@ class PhoneServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($id, 'phone update');
     }
 
     /**
@@ -90,6 +90,6 @@ class PhoneServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dd($id, 'phone destroy');
     }
 }

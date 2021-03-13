@@ -6,18 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-        .container {
-          max-width: 960px;
-        }
-
-        .pricing-header {
-          max-width: 700px;
-        }
-    </style>
-
     <title>Admin|Home</title>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="{{ route('adminHome') }}">Cable Unet</a>
@@ -51,7 +42,32 @@
 
                     <div class="card-body">
                       <h2 class="card-title pricing-card-title">${{ $service->price }} <small class="text-muted">/ mo</small></h2>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Get it now</button>
+                      @if ($service->internetService)
+                        <h3 class="card-title pricing-card-title"><small class="text-muted"> Internet Service: {{ $service->internetService->name }}</small></h3>
+                      @endif
+                      @if ($service->phoneService)
+                        <h3 class="card-title pricing-card-title"><small class="text-muted"> Phone Service: {{ $service->phoneService->name }}</small></h3>
+                      @endif
+                      @if ($service->cableService)
+                        <h3 class="card-title pricing-card-title"><small class="text-muted"> Cable Service: {{ $service->cableService->name }}</small></h3>
+                      @endif
+                      
+                      <div class="container">
+                        <div class="row justify-content-md-center">
+                            <form action="{{ route('services.destroy', ['service' => $service->id]) }}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
+                            </form>  
+    
+                            <form action="{{ route('services.update', ['service' => $service->id])}}" method="POST">
+                              @csrf
+                              @method('PUT');
+                              <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
+                              
+                            </form>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>   
@@ -83,7 +99,21 @@
                     <div class="card-body">
                       <h2 class="card-title pricing-card-title">${{ $internetService->price }} <small class="text-muted">/ mo</small></h2>
                       <h3 class="card-title pricing-card-title">{{ $internetService->speed }} <small class="text-muted"></small></h3>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Get it now</button>
+                      <div class="container">
+                        <div class="row justify-content-md-center">
+                            <form action="{{ route('internet_services.destroy', ['internet_service' => $internetService->id]) }}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
+                            </form>  
+    
+                            <form action="{{ route('internet_services.destroy', ['internet_service' => $internetService->id]) }}" method="POST">
+                              @csrf
+                              @method('PUT');
+                              <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
+                            </form>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>   
@@ -115,7 +145,21 @@
                     <div class="card-body">
                       <h2 class="card-title pricing-card-title">${{ $phoneService->price }} <small class="text-muted">/ mo</small></h2>
                       <h3 class="card-title pricing-card-title">{{ $phoneService->plan_limit }} <small class="text-muted"></small></h3>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Get it now</button>
+                      <div class="container">
+                        <div class="row justify-content-md-center">
+                            <form action="{{ route('phone_services.destroy', ['phone_service' => $phoneService->id]) }}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
+                            </form>  
+    
+                            <form action="{{ route('phone_services.destroy', ['phone_service' => $phoneService->id]) }}" method="POST">
+                              @csrf
+                              @method('PUT');
+                              <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
+                            </form>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>   
@@ -147,7 +191,21 @@
 
                     <div class="card-body">
                       <h2 class="card-title pricing-card-title">${{ $cableService->price }} <small class="text-muted">/ mo</small></h2>
-                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Get it now</button>
+                      <div class="container">
+                        <div class="row justify-content-md-center">
+                            <form action="{{ route('cable_services.destroy', ['cable_service' => $cableService->id]) }}" method="POST">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
+                            </form>  
+    
+                            <form action="{{ route('cable_services.destroy', ['cable_service' => $cableService->id]) }}" method="POST">
+                              @csrf
+                              @method('PUT');
+                              <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
+                            </form>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>   

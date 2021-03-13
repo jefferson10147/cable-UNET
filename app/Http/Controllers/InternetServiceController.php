@@ -78,7 +78,7 @@ class InternetServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        dd($id, 'internet update');
     }
 
     /**
@@ -89,6 +89,6 @@ class InternetServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dd($id, 'internet destroy');
     }
 }

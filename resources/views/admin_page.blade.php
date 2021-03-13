@@ -101,5 +101,37 @@
       </div>
     </div>
 
+
+    <!-- servcios de cable -->
+    <div class="container mt-5">
+      <h1  align="center"><strong>Cable Services</strong></h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2">
+        @foreach ($cableServices as $cableService)
+            <div class="col">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                      <h1 class="my-0 fw-normal">{{ ucfirst($cableService->name) }}</h1>
+                    </div>
+
+                    <div class="card-body">
+                      <h2 class="card-title pricing-card-title">${{ $cableService->price }} <small class="text-muted">/ mo</small></h2>
+                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Get it now</button>
+                    </div>
+                </div>
+            </div>   
+        @endforeach
+    </div> 
+
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a href="{{ route('cable_services.create') }}">
+            <button type="button" class="btn btn-primary">Añadir nuevos servicios de cable</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>

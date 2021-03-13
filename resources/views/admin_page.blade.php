@@ -21,6 +21,15 @@
             <li class="nav-item active">
               <a class="nav-link" href="#">Users <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Channels <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Packages <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Invoices <span class="sr-only">(current)</span></a>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <a href="{{ route('logout') }}"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button></a>
@@ -43,13 +52,13 @@
                     <div class="card-body">
                       <h2 class="card-title pricing-card-title">${{ $service->price }} <small class="text-muted">/ mo</small></h2>
                       @if ($service->internetService)
-                        <h3 class="card-title pricing-card-title"><small class="text-muted"> Internet Service: {{ $service->internetService->name }}</small></h3>
+                        <h3 class="card-title pricing-card-title"><small class="text-muted"> Internet Service: {{ ucfirst($service->internetService->name) }}</small></h3>
                       @endif
                       @if ($service->phoneService)
-                        <h3 class="card-title pricing-card-title"><small class="text-muted"> Phone Service: {{ $service->phoneService->name }}</small></h3>
+                        <h3 class="card-title pricing-card-title"><small class="text-muted"> Phone Service: {{ ucfirst($service->phoneService->name) }}</small></h3>
                       @endif
                       @if ($service->cableService)
-                        <h3 class="card-title pricing-card-title"><small class="text-muted"> Cable Service: {{ $service->cableService->name }}</small></h3>
+                        <h3 class="card-title pricing-card-title"><small class="text-muted"> Cable Service: {{ ucfirst($service->cableService->name) }}</small></h3>
                       @endif
                       
                       <div class="container">
@@ -98,7 +107,7 @@
 
                     <div class="card-body">
                       <h2 class="card-title pricing-card-title">${{ $internetService->price }} <small class="text-muted">/ mo</small></h2>
-                      <h3 class="card-title pricing-card-title">{{ $internetService->speed }} <small class="text-muted"></small></h3>
+                      <h3 class="card-title pricing-card-title"><small class="text-muted">{{ $internetService->speed }}</small></h3>
                       <div class="container">
                         <div class="row justify-content-md-center">
                             <form action="{{ route('internet_services.destroy', ['internet_service' => $internetService->id]) }}" method="POST">
@@ -144,7 +153,7 @@
 
                     <div class="card-body">
                       <h2 class="card-title pricing-card-title">${{ $phoneService->price }} <small class="text-muted">/ mo</small></h2>
-                      <h3 class="card-title pricing-card-title">{{ $phoneService->plan_limit }} <small class="text-muted"></small></h3>
+                      <h3 class="card-title pricing-card-title"><small class="text-muted">{{ $phoneService->plan_limit }}</small></h3>
                       <div class="container">
                         <div class="row justify-content-md-center">
                             <form action="{{ route('phone_services.destroy', ['phone_service' => $phoneService->id]) }}" method="POST">

@@ -36,6 +36,37 @@
           </form>
         </div>
     </nav>
+
+    <!-- servcios -->
+    <div class="container">
+      <h1 class="mt-5" align="center"><strong>Services</strong></h1>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2">
+        @foreach ($services as $service)
+            <div class="col">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-header">
+                      <h1 class="my-0 fw-normal">{{ ucfirst($service->name) }}</h1>
+                    </div>
+
+                    <div class="card-body">
+                      <h2 class="card-title pricing-card-title">${{ $service->price }} <small class="text-muted">/ mo</small></h2>
+                      <button type="button" class="w-100 btn btn-lg btn-outline-primary">Get it now</button>
+                    </div>
+                </div>
+            </div>   
+        @endforeach
+    </div> 
+
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <a href="{{ route('services.create') }}">
+            <button type="button" class="btn btn-primary">Create new services</button>
+          </a>
+        </div>
+      </div>
+    </div>
     
     <!-- servcios de internet -->
     <div class="container">

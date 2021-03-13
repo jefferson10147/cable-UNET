@@ -46,7 +46,6 @@ class ChannelController extends Controller
         Channel::create($request->all());
 
         return redirect('channels/create')->with('succes', 'The Channel have been correctly registered');
-
     }
 
     /**

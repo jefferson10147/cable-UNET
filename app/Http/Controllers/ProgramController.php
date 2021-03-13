@@ -39,7 +39,7 @@ class ProgramController extends Controller
     {
         $request->validate([
             'date' => ['date', 'required'],
-            'program_name' => 'required',
+            'program_name' => ['required', 'string'],
             'starts_at' => 'required',
             'ends_at' => 'required'
         ]);

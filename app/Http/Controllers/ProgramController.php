@@ -93,4 +93,21 @@ class ProgramController extends Controller
     {
         //
     }
+
+    public function addChannel($id)
+    {
+        $channelId = $id;
+        $programs = Program::all();
+
+        return view('update_programs_list', compact('programs', 'channelId'));
+    }
+
+    public function updateProgramChannel($id, $channelId)
+    {
+        $program = Program::find($id);
+        $program->channel_id = $channelId;
+        $program->save();
+
+        return redirect('channels')->with('succes', 'The Programation have been correctly registered');
+    }
 }

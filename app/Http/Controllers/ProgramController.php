@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Program;
 
 class ProgramController extends Controller
 {
@@ -13,7 +14,9 @@ class ProgramController extends Controller
      */
     public function index()
     {
-        //
+        $programs = Program::all();
+        dd($programs);
+        return view('programs_list', compact('programs'));
     }
 
     /**
@@ -34,7 +37,14 @@ class ProgramController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*
+        $request->validate([
+            'channel_id' => ['required'],
+            ''
+        ]);
+        */
+        Program::create($request->all());
+        return redirect('programs/create')->with('succes', 'The program have been correctly registered');
     }
 
     /**
@@ -45,7 +55,8 @@ class ProgramController extends Controller
      */
     public function show($id)
     {
-        //
+        $program = Program::find($id);
+        return view();
     }
 
     /**

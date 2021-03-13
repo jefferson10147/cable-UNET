@@ -45,11 +45,14 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'service_name' => ['required', 'string'],
+        ]);
 
-
-        $internetServiceId = $request->post('internet_service_id');
-        $phoneServiceId =  $request->post('phone_service_id');
-        $cableServiceId = $request->post('cable_service_id');
+        $internetServiceId = $request->get('internet_service_id');
+        $phoneServiceId =  $request->get('phone_service_id');
+        $cableServiceId = $request->get('cable_service_id');
+        $serviceName = $request->get('service_name');
         $price = 0;
 
         if (!$internetServiceId && !$phoneServiceId && !$cableServiceId) {
@@ -73,7 +76,8 @@ class ServiceController extends Controller
             'internet_service_id' => $internetServiceId,
             'phone_service_id' => $phoneServiceId,
             'cable_service_id' => $cableServiceId,
-            'price' => $price
+            'price' => $price,
+            'service_name' => $serviceName
         ]);
 
         return redirect('services/create')->with('succes', 'Service have been correctly registered');

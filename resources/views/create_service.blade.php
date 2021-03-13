@@ -10,6 +10,8 @@
 
     <form action="{{ route('services.store') }}" method="POST">
         @csrf
+        <input type="text" name="service_name" required>
+        
         <select name="internet_service_id">
             <option value="{{ NULL }}"></option>
             @foreach ($internetServices as $internetService)

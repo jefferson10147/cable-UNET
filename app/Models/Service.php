@@ -14,6 +14,7 @@ class Service extends Model
         'phone_service_id',
         'cable_service_id',
         'price',
+        'service_name'
     ];
 
     public $timestamps = false;

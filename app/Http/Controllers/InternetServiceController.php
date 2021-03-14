@@ -44,7 +44,7 @@ class InternetServiceController extends Controller
         ]);
         InternetService::create($request->all());
 
-        return redirect('internet_services/create')->with('succes', 'The internet service have been correctly registered');
+        return redirect('internet_services/create')->with('success', 'The internet service have been correctly registered');
     }
 
     /**

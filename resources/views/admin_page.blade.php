@@ -19,19 +19,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="">Users <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="">Users</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="{{ route('channels.index') }}">Channels <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ route('channels.index') }}">Channels</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="{{ route('programs.index') }}">Programs <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ route('programs.index') }}">Programs</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Packages <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ route('channels.schedules') }}">Schedules</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Invoices <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">Invoices</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">

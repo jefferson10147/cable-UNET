@@ -19,6 +19,12 @@ class ChannelController extends Controller
         return view('channels_list', compact('channels')); 
     }
 
+    public function channelsSchedules()
+    {   
+        $channels = Channel::all();
+        return view('show_schedules', compact('channels'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -91,4 +97,6 @@ class ChannelController extends Controller
         Channel::destroy($id);
         return redirect('channels/');
     }
+
+    
 }

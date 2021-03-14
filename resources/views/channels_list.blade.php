@@ -17,7 +17,6 @@
                 <th>Name</th>
                 <th>Descrition</th>
                 <th>Actions</th>
-                <th></th>
             </tr>
         </thead>
         

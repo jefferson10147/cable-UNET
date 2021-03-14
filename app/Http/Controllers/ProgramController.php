@@ -108,6 +108,6 @@ class ProgramController extends Controller
         $program->channel_id = $channelId;
         $program->save();
 
-        return redirect('channels')->with('succes', 'The Programation have been correctly registered');
+        return redirect('channels')->with('success', 'The Programation have been correctly registered');
     }
 }

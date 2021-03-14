@@ -80,7 +80,7 @@ class ServiceController extends Controller
             'service_name' => $serviceName
         ]);
 
-        return redirect('services/create')->with('succes', 'Service have been correctly registered');
+        return redirect('services/create')->with('success', 'Service have been correctly registered');
     }
 
     /**
@@ -91,7 +91,7 @@ class ServiceController extends Controller
      */
     public function show($id)
     {
-        //
+        // dd($id);
     }
 
     /**
@@ -102,7 +102,26 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $service = Service::find($id);
+
+        $mainInternetService = $service->internetService;
+        $mainPhoneService = $service->phoneService;
+        $mainCableService = $service->cableService;
+
+        //dd($mainInternetService, $mainPhoneService, $mainCableService);
+        $internetServices = InternetService::all();
+        $phoneServices = PhoneService::all();
+        $cableServices = CableService::all();
+
+        return view('update_service', compact(
+            'service',
+            'mainInternetService',
+            'mainPhoneService',
+            'mainCableService',
+            'internetServices',
+            'phoneServices',
+            'cableServices'
+        ));
     }
 
     /**
@@ -114,7 +133,42 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($id);
+
+        $request->validate([
+            'service_name' => ['required', 'string'],
+        ]);
+
+        $service = Service::find($id);
+        $service->service_name = $request->get('service_name');
+        
+        $internetServiceId = $request->get('internet_service_id');
+        $phoneServiceId =  $request->get('phone_service_id');
+        $cableServiceId = $request->get('cable_service_id');
+        $price = 0;
+
+        if (!$internetServiceId && !$phoneServiceId && !$cableServiceId) {
+            return redirect('services/create')->with('danger', 'You have to choose at least one service');
+        }
+
+        $service->internet_service_id = $internetServiceId;
+        if ($internetServiceId) {
+            $price = InternetService::find($internetServiceId)->price;
+        }
+
+        $service->phone_service_id = $phoneServiceId;
+        if ($phoneServiceId) {
+            $price += PhoneService::find($phoneServiceId)->price;
+        }
+
+        $service->cable_service_id = $cableServiceId;
+        if ($cableServiceId) {
+            $price += CableService::find($cableServiceId)->price;
+        }
+
+        $service->price = $price;
+        $service->save();
+
+        return redirect('admin_home/');
     }
 
     /**

@@ -66,18 +66,15 @@
                       
                       <div class="container">
                         <div class="row justify-content-md-center">
+                            
                             <form action="{{ route('services.destroy', ['service' => $service->id]) }}" method="POST">
                               @csrf
                               @method('DELETE')
                               <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
                             </form>  
-    
-                            <form action="{{ route('services.update', ['service' => $service->id])}}" method="POST">
-                              @csrf
-                              @method('PUT');
-                              <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
-                              
-                            </form>
+
+                            <a href="{{ route('services.edit', ['service' => $service->id]) }}"><button type="submit" class="btn btn-lg btn-outline-primary">Update</button></a>
+                            
                         </div>
                       </div>
                     </div>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Admin|Home</title>
+    <title>Admin | Home</title>
 </head>
 
 <body>
@@ -23,6 +23,9 @@
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">Channels <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Programs <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">Packages <span class="sr-only">(current)</span></a>

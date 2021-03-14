@@ -44,7 +44,7 @@
     <div class="container">
       <h1 class="mt-5" align="center"><strong>Services</strong></h1>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 table-active pt-2">
         @foreach ($services as $service)
             <div class="col">
                 <div class="card mb-4 shadow-sm">
@@ -70,10 +70,12 @@
                             <form action="{{ route('services.destroy', ['service' => $service->id]) }}" method="POST">
                               @csrf
                               @method('DELETE')
-                              <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
+                              <button type="submit" class="btn btn-lg btn-outline-danger btn-sm mr-1">Delete</button>
                             </form>  
 
-                            <a href="{{ route('services.edit', ['service' => $service->id]) }}"><button type="submit" class="btn btn-lg btn-outline-primary">Update</button></a>
+                            <a href="{{ route('services.edit', ['service' => $service->id]) }}">
+                              <button type="submit" class="btn btn-lg btn-outline-primary btn-sm ml-1">Update</button>
+                            </a>
                             
                         </div>
                       </div>
@@ -97,7 +99,7 @@
     <div class="container">
       <h1 class="mt-5" align="center"><strong>Internet Services</strong></h1>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 table-active pt-2">
         @foreach ($internetServices as $internetService)
             <div class="col">
                 <div class="card mb-4 shadow-sm">
@@ -113,11 +115,11 @@
                             <form action="{{ route('internet_services.destroy', ['internet_service' => $internetService->id]) }}" method="POST">
                               @csrf
                               @method('DELETE')
-                              <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
+                              <button type="submit" class="btn btn-lg btn-outline-danger btn-sm mr-1">Delete</button>
                             </form>  
                             
                             <a href="{{ route('internet_services.edit', ['internet_service' => $internetService->id]) }}">
-                              <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
+                              <button type="submit" class="btn btn-lg btn-outline-primary btn-sm ml-1">Update</button>
                             </a>
                         </div>
                       </div>
@@ -141,7 +143,7 @@
     <div class="container mt-5">
       <h1  align="center"><strong>Phone Services</strong></h1>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2">
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 table-active pt-2">
         @foreach ($phoneServices as $phoneService)
             <div class="col">
                 <div class="card mb-4 shadow-sm">
@@ -157,11 +159,11 @@
                             <form action="{{ route('phone_services.destroy', ['phone_service' => $phoneService->id]) }}" method="POST">
                               @csrf
                               @method('DELETE')
-                              <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
+                              <button type="submit" class="btn btn-lg btn-outline-danger btn-sm mr-1">Delete</button>
                             </form>  
                             
                             <a href="{{ route('phone_services.edit', ['phone_service' => $phoneService->id]) }}">
-                              <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
+                              <button type="submit" class="btn btn-lg btn-outline-primary btn-sm ml-1">Update</button>
                             </a>
 
                           </div>
@@ -187,7 +189,7 @@
     <div class="container mt-5">
       <h1  align="center"><strong>Cable Services</strong></h1>
     </div>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2">
+    <div class="row row-cols-1 row-cols-md-3 mb-1 text-center mx-2 table-active pt-2">
         @foreach ($cableServices as $cableService)
             <div class="col">
                 <div class="card mb-4 shadow-sm">
@@ -214,20 +216,21 @@
                           </div>
                         </div>
                         
-                        <div class="row justify-content-md-center mt-2">
-                            <form action="{{ route('cable_services.destroy', ['cable_service' => $cableService->id]) }}" method="POST">
-                              @csrf
-                              @method('DELETE')
-                              <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
-                            </form>  
-                            
-                            <a href="{{ route('cable_services.edit', ['cable_service' => $cableService->id]) }}">
-                              <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
-                            </a>
+                        <div class="row justify-content-md-center mt-2 p-1">
+                          <form action="{{ route('cable_services.destroy', ['cable_service' => $cableService->id]) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-lg btn-outline-danger btn-sm">Delete</button>
+                          </form>  
+                          
+                          <a href="{{ route('cable_service.addChannels', ['id' => $cableService->id]) }}">
+                            <button type="submit" class="btn btn-lg btn-outline-secondary btn-sm mx-3">Add Channels</button>
+                          </a>
+                          
+                          <a href="{{ route('cable_services.edit', ['cable_service' => $cableService->id]) }}">
+                            <button type="submit" class="btn btn-lg btn-outline-primary btn-sm">Update</button>
+                          </a>
 
-                            <a href="{{ route('cable_service.addChannels', ['id' => $cableService->id]) }}">
-                              <button type="submit" class="btn btn-lg btn-outline-secondary">Add Channels</button>
-                            </a>
                         </div>
                       </div>
                     </div>

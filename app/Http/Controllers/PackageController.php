@@ -42,13 +42,10 @@ class PackageController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
         $cableServiceId = $request->get('cable_service_id');
-        //dd($request->post('channels_ids'), 'hola');
         $channelsIds = $request->get('channels_ids');
-
         $oldPackages = Package::where('cable_service_id', $cableServiceId)->get();
-        //dd($oldPackages);
+
         if($oldPackages){
             foreach($oldPackages as $oldPackage){
                 Package::destroy($oldPackage->id);

@@ -89,6 +89,6 @@ class ChannelController extends Controller
     public function destroy($id)
     {
         Channel::destroy($id);
-        return redirect('channels');
+        return redirect('channels/');
     }
 }

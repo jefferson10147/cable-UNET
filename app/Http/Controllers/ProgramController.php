@@ -15,7 +15,6 @@ class ProgramController extends Controller
     public function index()
     {
         $programs = Program::all();
-        dd($programs);
         return view('programs_list', compact('programs'));
     }
 
@@ -91,7 +90,9 @@ class ProgramController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dd("aqui pa");
+        Program::destroy($id);
+        return redirect('programs');
     }
 
     public function addChannel($id)

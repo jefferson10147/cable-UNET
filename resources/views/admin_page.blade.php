@@ -25,7 +25,7 @@
               <a class="nav-link" href="{{ route('channels.index') }}">Channels <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#">Programs <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{{ route('programs.index') }}">Programs <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#">Packages <span class="sr-only">(current)</span></a>

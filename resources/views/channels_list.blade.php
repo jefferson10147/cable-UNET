@@ -26,14 +26,23 @@
                     <td> {{ $channel->name }} </td>
                     <td> {{ $channel->description }}</td>
                     <td>
-                        <a href="{{ route('programs.add_channel', ['id' => $channel->id]) }}">
-                            <button class="btn btn-outline-secondary">Add Programs</button>
-                        </a>
+                        <div class="container">
+                            <div class="row">
+                                <a href="{{ route('programs.add_channel', ['id' => $channel->id]) }}">
+                                    <button class="btn btn-outline-secondary btn-sm">Add Programs</button>
+                                </a>
+                                
+                                <div class="row pl-5">
+                                    <form action="{{ route('channels.destroy', ['channel' => $channel->id]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-lg btn-outline-danger btn-sm">Delete</button>
+                                    </form> 
 
-                        <a href="{{ route('channels.destroy', ['channel' => $channel->id]) }}">
-                            <button class="btn btn-outline-danger">Delete</button>
-                        </a>
-
+                                </div>
+                                
+                            </div>
+                        </div>
                     </td>
                 </tr>
             @endforeach            

@@ -66,7 +66,8 @@ class InternetServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $internetService = InternetService::find($id);
+        return view('update_internet_service', compact('internetService'));
     }
 
     /**
@@ -78,7 +79,19 @@ class InternetServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($id, 'internet update');
+        $request->validate([
+            'name' => ['required', 'string'],
+            'speed' => ['required', 'string'],
+            'price' => ['required', 'numeric']
+        ]);
+
+        $internetService = InternetService::find($id);
+        $internetService->name = $request->get('name');
+        $internetService->speed = $request->get('speed');
+        $internetService->price = $request->get('price');
+        $internetService->save();
+
+        return redirect('admin_home/');
     }
 
     /**

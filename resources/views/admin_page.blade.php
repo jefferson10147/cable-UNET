@@ -115,12 +115,10 @@
                               @method('DELETE')
                               <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
                             </form>  
-    
-                            <form action="{{ route('internet_services.destroy', ['internet_service' => $internetService->id]) }}" method="POST">
-                              @csrf
-                              @method('PUT');
+                            
+                            <a href="{{ route('internet_services.edit', ['internet_service' => $internetService->id]) }}">
                               <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
-                            </form>
+                            </a>
                         </div>
                       </div>
                     </div>

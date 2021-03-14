@@ -125,6 +125,7 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        dd($id);
+        Service::destroy($id);
+        return redirect('admin_home/');
     }
 }

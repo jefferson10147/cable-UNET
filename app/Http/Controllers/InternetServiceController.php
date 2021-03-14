@@ -89,6 +89,7 @@ class InternetServiceController extends Controller
      */
     public function destroy($id)
     {
-        dd($id, 'internet destroy');
+        InternetService::destroy($id);
+        return redirect('admin_home/');
     }
 }

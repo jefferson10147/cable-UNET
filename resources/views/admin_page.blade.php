@@ -204,12 +204,10 @@
                               @method('DELETE')
                               <button type="submit" class="btn btn-lg btn-outline-danger">Delete</button>
                             </form>  
-    
-                            <form action="{{ route('cable_services.destroy', ['cable_service' => $cableService->id]) }}" method="POST">
-                              @csrf
-                              @method('PUT');
+                            
+                            <a href="{{ route('cable_services.edit', ['cable_service' => $cableService->id]) }}">
                               <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
-                            </form>
+                            </a>
                         </div>
                       </div>
                     </div>

@@ -66,7 +66,8 @@ class CableServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cableService = CableService::find($id);
+        return view('update_cable_service', compact('cableService'));
     }
 
     /**
@@ -78,7 +79,17 @@ class CableServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($id, 'update');
+        $request->validate([
+            'name' => ['required', 'string'],
+            'price' => ['required', 'numeric']
+        ]);
+
+        $cableService = CableService::find($id);
+        $cableService->name = $request->get('name');
+        $cableService->price = $request->get('price');
+        $cableService->save();
+
+        return redirect('admin_home/');
     }
 
     /**

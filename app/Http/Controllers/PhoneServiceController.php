@@ -67,7 +67,8 @@ class PhoneServiceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $phoneService = PhoneService::find($id);
+        return view('update_phone_service', compact('phoneService'));
     }
 
     /**
@@ -79,7 +80,19 @@ class PhoneServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        dd($id, 'phone update');
+        $request->validate([
+            'name' => ['required', 'string'],
+            'plan_limit' => ['required', 'string'],
+            'price' => ['required', 'numeric']
+        ]);
+
+        $phoneService = PhoneService::find($id);
+        $phoneService->name = $request->get('name');
+        $phoneService->plan_limit = $request->get('plan_limit');
+        $phoneService->price = $request->get('price');
+        $phoneService->save();
+
+        return redirect('admin_home/');
     }
 
     /**

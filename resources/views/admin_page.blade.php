@@ -198,7 +198,23 @@
                     <div class="card-body">
                       <h2 class="card-title pricing-card-title">${{ $cableService->price }} <small class="text-muted">/ mo</small></h2>
                       <div class="container">
-                        <div class="row justify-content-md-center">
+                        
+                        <!-- aqui el drop down de los canales -->
+                        <div  class="row justify-content-md-center">
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-outline-info">Channels</button>
+                            <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                              @foreach ($cableService->packages as $package)
+                                <li class="dropdown-item">{{ $package->channel->name }}</li>    
+                              @endforeach
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div class="row justify-content-md-center mt-2">
                             <form action="{{ route('cable_services.destroy', ['cable_service' => $cableService->id]) }}" method="POST">
                               @csrf
                               @method('DELETE')

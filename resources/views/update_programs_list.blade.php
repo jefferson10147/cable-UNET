@@ -33,7 +33,7 @@
 
                         <td>
                             <a href="{{ route('programs.updateProgramChannel', ['id' => $program->id, 'channel_id' => $channelId]) }}">
-                                <button class="btn btn-outline-secondary">Add to Channel</button>
+                                <button class="btn btn-outline-secondary btn-sm">Add to Channel</button>
                             </a>
                         </td>
                     </tr>

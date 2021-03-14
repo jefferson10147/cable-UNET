@@ -38,9 +38,7 @@
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-lg btn-outline-danger btn-sm">Delete</button>
                                     </form> 
-
                                 </div>
-                                
                             </div>
                         </div>
                     </td>

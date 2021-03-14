@@ -34,9 +34,11 @@
                         <td> {{ $program->channel->name }} </td>
 
                         <td>
-                            <a href="{{ route('programs.destroy', ['program' => $program->id]) }}">
-                                <button class="btn btn-outline-danger">Delete</button>
-                            </a>
+                            <form action="{{ route('programs.destroy', ['program' => $program->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-lg btn-outline-danger btn-sm">Delete</button>
+                            </form> 
                         </td>
                     </tr>
                 @endif
@@ -67,9 +69,11 @@
                         <td> {{ $program->ends_at }} </td>
 
                         <td>
-                            <a href="{{ route('programs.destroy', ['program' => $program->id]) }}">
-                                <button class="btn btn-outline-danger">Delete</button>
-                            </a>
+                            <form action="{{ route('programs.destroy', ['program' => $program->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-lg btn-outline-danger btn-sm">Delete</button>
+                            </form> 
                         </td>
                     </tr>
                 @endif
@@ -86,6 +90,11 @@
           </div>
         </div>
     </div>
-    
+
+    <!--
+    <a href=" route('programs.destroy', ['program' => $program->id])">
+        <button class="btn btn-outline-danger">Delete</button>
+    </a>
+    -->
 </body>
 </html>

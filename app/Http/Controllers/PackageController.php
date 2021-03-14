@@ -47,6 +47,14 @@ class PackageController extends Controller
         //dd($request->post('channels_ids'), 'hola');
         $channelsIds = $request->get('channels_ids');
 
+        $oldPackages = Package::where('cable_service_id', $cableServiceId)->get();
+        //dd($oldPackages);
+        if($oldPackages){
+            foreach($oldPackages as $oldPackage){
+                Package::destroy($oldPackage->id);
+            }
+        }
+
         if (!$cableServiceId || !$channelsIds){
             return redirect('packages/create')->with('danger', 'You must choose at least one channel and at least one cable Service');
         }

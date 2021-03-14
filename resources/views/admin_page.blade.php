@@ -224,6 +224,10 @@
                             <a href="{{ route('cable_services.edit', ['cable_service' => $cableService->id]) }}">
                               <button type="submit" class="btn btn-lg btn-outline-primary">Update</button>
                             </a>
+
+                            <a href="{{ route('cable_service.addChannels', ['id' => $cableService->id]) }}">
+                              <button type="submit" class="btn btn-lg btn-outline-secondary">Add Channels</button>
+                            </a>
                         </div>
                       </div>
                     </div>

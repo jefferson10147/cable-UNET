@@ -38,6 +38,7 @@ Route::resource('/packages', PackageController::class);
 
 Route::get('programs/add_channel/{id}', [ProgramController::class, 'addChannel'])->name('programs.add_channel');
 Route::get('program/{id}/channel/{channel_id}', [ProgramController::class, 'updateProgramChannel'])->name('programs.updateProgramChannel');
+Route::get('cable_service/add/{id}', [CableServiceController::class, 'addChannels'])->name('cable_service.addChannels');
 
 
 Auth::routes();

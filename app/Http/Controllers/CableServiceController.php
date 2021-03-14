@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\CableService;
+use App\Models\Channel;
 
 class CableServiceController extends Controller
 {
@@ -102,5 +103,12 @@ class CableServiceController extends Controller
     {
         CableService::destroy($id);
         return redirect('admin_home/');
+    }
+
+    public function addChannels($id)
+    {
+        $cableServices = array(CableService::find($id));
+        $channels = Channel::all();
+        return view('create_package', compact('cableServices', 'channels'));
     }
 }

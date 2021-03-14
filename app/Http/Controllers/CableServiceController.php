@@ -89,6 +89,7 @@ class CableServiceController extends Controller
      */
     public function destroy($id)
     {
-        dd($id, 'delete');
+        CableService::destroy($id);
+        return redirect('admin_home/');
     }
 }

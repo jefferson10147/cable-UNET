@@ -90,6 +90,7 @@ class PhoneServiceController extends Controller
      */
     public function destroy($id)
     {
-        dd($id, 'phone destroy');
+        PhoneService::destroy($id);
+        return redirect('admin_home/');
     }
 }

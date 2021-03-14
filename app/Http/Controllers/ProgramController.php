@@ -45,7 +45,7 @@ class ProgramController extends Controller
         ]);
         Program::create($request->all());
 
-        return redirect('programs/create')->with('succes', 'The program have been correctly registered');
+        return redirect('programs/create')->with('success', 'The program have been correctly registered');
     }
 
     /**

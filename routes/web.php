@@ -25,8 +25,14 @@ Route::get('/save/package', [PackageController::class, 'savePackage'])->name('pa
 Route::get('/save/program', [ProgramController::class, 'saveProgram'])->name('program.save');
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => ['auth', 'CheckRole']], function () {
+    Route::get('/admin_home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminHome');
+});
+
+
+
 Route::get('channels/show_schedules', [ChannelController::class, 'channelsSchedules'])->name('channels.schedules');
 
 Route::resource('/programs', ProgramController::class);
@@ -41,6 +47,4 @@ Route::get('programs/add_channel/{id}', [ProgramController::class, 'addChannel']
 Route::get('program/{id}/channel/{channel_id}', [ProgramController::class, 'updateProgramChannel'])->name('programs.updateProgramChannel');
 Route::get('cable_service/add/{id}', [CableServiceController::class, 'addChannels'])->name('cable_service.addChannels');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/admin_home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminHome');
 

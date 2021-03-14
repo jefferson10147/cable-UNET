@@ -31,7 +31,7 @@
 
                 <div class="row">
                   <div class="col-md-12 form-group mb-3">
-                    <label for="budget" class="col-form-label">Price per month *</label>
+                    <label for="budget" class="col-form-label">Price Per Month *</label>
                     <input type="number" class="form-control" name="price" id="price" placeholder="price" step="0.01">
                   </div>
                 </div>

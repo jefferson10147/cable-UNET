@@ -40,7 +40,6 @@ class ChannelController extends Controller
         $request->validate([
             'name' => ['required', 'string'],
             'description' => ['required', 'string'],
-            'price' => ['required', 'numeric']
         ]);
         Channel::create($request->all());
 

@@ -85,4 +85,22 @@ class InvoiceController extends Controller
         Invoice::destroy($id);
         return redirect('invoices/');
     }
+
+    public function generateInvoices()
+    {
+        $users = User::all();
+
+        foreach($users as $user){
+            // dd($user);
+            if($user->service_id){
+               
+                Invoice::create([
+                    'user_id' => $user->id,
+                    'amount' => $user->service->price
+                ]);
+            }
+        }
+
+        return redirect('invoices');
+    }
 }

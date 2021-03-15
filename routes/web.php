@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 
 Route::get('channels/show_schedules', [ChannelController::class, 'channelsSchedules'])->name('channels.schedules');
+Route::get('invoices/generate', [InvoiceController::class, 'generateInvoices'])->name('invoices.generateInvoices');
+
 
 Route::resource('/programs', ProgramController::class);
 Route::resource('/channels', ChannelController::class);

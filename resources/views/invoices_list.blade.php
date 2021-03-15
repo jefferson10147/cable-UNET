@@ -43,7 +43,7 @@
     <div class="container">
         <div class="row">
           <div class="col text-center">
-            <a href="{{ route('invoices.create') }}">
+            <a href="{{ route('invoices.generateInvoices') }}">
               <button type="button" class="btn btn-primary">Generate Invoices</button>
             </a>
           </div>

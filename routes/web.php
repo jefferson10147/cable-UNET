@@ -10,6 +10,7 @@ use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -42,6 +43,7 @@ Route::resource('/phone_services', PhoneServiceController::class);
 Route::resource('/cable_services', CableServiceController::class);
 Route::resource('/services', ServiceController::class);
 Route::resource('/packages', PackageController::class);
+Route::resource('/users', UserController::class);
 
 Route::get('programs/add_channel/{id}', [ProgramController::class, 'addChannel'])->name('programs.add_channel');
 Route::get('program/{id}/channel/{channel_id}', [ProgramController::class, 'updateProgramChannel'])->name('programs.updateProgramChannel');

@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users_list', compact('user'));
+        return view('users_list', compact('users'));
     }
 
     /**
@@ -81,6 +81,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::destroy($id);
+        return redirect('users_list');
     }
 }

@@ -33,7 +33,7 @@ class HomeController extends Controller
         if ($user->role == 1){
             return redirect('admin_home');
         }else{
-            return redirect('home');
+            return view('home', compact('user'));
         }
         
     }

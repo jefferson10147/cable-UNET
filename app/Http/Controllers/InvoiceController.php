@@ -91,9 +91,8 @@ class InvoiceController extends Controller
         $users = User::all();
 
         foreach($users as $user){
-            // dd($user);
-            if($user->service_id){
-               
+
+            if($user->service_id){               
                 Invoice::create([
                     'user_id' => $user->id,
                     'amount' => $user->service->price

@@ -70,7 +70,11 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+        $user->role = 1;
+        $user->save();
+
+        return redirect('users');
     }
 
     /**
@@ -82,6 +86,6 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::destroy($id);
-        return redirect('users_list');
+        return redirect('users');
     }
 }

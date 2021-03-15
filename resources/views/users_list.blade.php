@@ -18,6 +18,7 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Created at</th>
+                <th>Updated at</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -29,6 +30,8 @@
                     <td> {{ $user->name }} </td>
                     <td> {{ $user->email }}</td>
                     <td> {{ $user->created_at }}</td>
+                    <td> {{ $user->updated_at }}</td>
+
                     <td>
                         <div class="container">
                             <div class="row">

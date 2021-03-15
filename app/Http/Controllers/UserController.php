@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Service;
+use App\Models\ChangeRequest;
 
 class UserController extends Controller
 {
@@ -100,10 +101,28 @@ class UserController extends Controller
 
     public function updateUserService ($id, $service_id)
     {
+        /*
         $user = User::find($id);
         $user->service_id = $service_id;
         $user->save();
+
         /* insertar en la tabla de peticiones */
+        ChangeRequest::create([
+            'user_id' => $id,
+            'service_id' => $service_id 
+        ]);
+
         return redirect('home'); 
+    }
+
+    public function replaceUserService($id, $service_id){
+        $user = User::find($id);
+        $user->service_id = $service_id;
+        $user->save();
+
+        $change_request = ChangeRequest::all()->where('user_id', $id);
+        ChangeRequest::destroy($change_request);
+
+        return redirect('change_requests');
     }
 }

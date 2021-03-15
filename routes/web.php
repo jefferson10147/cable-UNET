@@ -37,6 +37,7 @@ Route::get('channels/show_schedules', [ChannelController::class, 'channelsSchedu
 Route::get('invoices/generate', [InvoiceController::class, 'generateInvoices'])->name('invoices.generateInvoices');
 Route::get('users/update_service/{id}', [UserController::class, 'changeUserService'])->name('users.changeService');
 Route::get('users/{id}/change/{service_id}', [UserController::class, 'updateUserService'])->name('users.updateService');
+Route::get('users/{id}/service/{service_id}', [UserController::class, 'replaceUserService'])->name('users.replaceService');
 
 Route::resource('/programs', ProgramController::class);
 Route::resource('/channels', ChannelController::class);

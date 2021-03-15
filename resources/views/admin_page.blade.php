@@ -33,6 +33,9 @@
             <li class="nav-item active">
               <a class="nav-link" href="{{ route('invoices.index') }}">Invoices</a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ route('change_requests.index') }}">See users requests</a>
+            </li>
           </ul>
           <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('logout') }}">
             @csrf

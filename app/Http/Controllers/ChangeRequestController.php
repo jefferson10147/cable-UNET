@@ -81,6 +81,7 @@ class ChangeRequestController extends Controller
      */
     public function destroy($id)
     {
-        //
+        ChangeRequest::destroy($id);
+        return redirect('change_requests');
     }
 }

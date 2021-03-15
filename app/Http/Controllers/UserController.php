@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Service;
 use App\Models\ChangeRequest;
+use PharIo\Manifest\Author;
 
 class UserController extends Controller
 {
@@ -117,6 +119,12 @@ class UserController extends Controller
         $change_request = ChangeRequest::all()->where('user_id', $id);
         ChangeRequest::destroy($change_request);
 
-        return redirect('change_requests');
+
+        if($user->role){
+            return redirect('change_requests');
+        }
+
+        return redirect('home');
     }
+
 }

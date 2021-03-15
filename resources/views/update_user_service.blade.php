@@ -9,7 +9,7 @@
     <title>Update | User Service</title>
 </head>
 <body>
-  
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark  sticky-top">
     <a class="navbar-brand" href="{{ route('home') }}">Cable Unet</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,11 +84,11 @@
                       
                         <div class="container">
                           <div class="row justify-content-md-center">
-                              <form action="{{ route('users.updateService', ['id' => $user->id, 'service_id' => $service->id]) }}" method="POST">
-                                @csrf
-                                @method('GET')
-                                <button type="submit" class="btn btn-lg btn-outline-success btn-sm mr-1">Hire</button>
-                              </form>  
+                            <form action="{{ route('users.updateService', ['id' => $user->id, 'service_id' => $service->id]) }}" method="POST">
+                              @csrf
+                              @method('GET')
+                              <button type="submit" class="btn btn-lg btn-outline-success btn-sm mr-1">Request Change</button>
+                            </form>  
                           </div>
                         </div>
                       </div>

@@ -32,8 +32,6 @@
 
       <main role="main">
 
-        
-
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron">
           <div class="container">
@@ -50,9 +48,8 @@
                     <a class="btn btn-outline-secondary" href="{{ route('users.changeService', ['id' => $user->id])}}"> Change my service </a>
 
                 @else
-
                     <p class="lead font-weight-normal"> Currently you do not have any contracted service </p>
-                    <a class="btn btn-outline-secondary" href="#"> Buy service </a>
+                    <a class="btn btn-outline-secondary" href="{{ route('services.index')}}"> Buy service </a>
                 @endif
 
             </div>
@@ -63,44 +60,46 @@
         <div class="container">
           <!-- Example row of columns -->
             <div class="row">
+                @if ($user->service)
+                    @if ($user->service->internetService)
+                        <div class="col">
+                            <h2>Internet Service</h2>
+                            <p>Your internet service is our {{ ucfirst($user->service->internetService->name) }} plan, just for ${{ $user->service->internetService->price }} you can enjoy {{ $user->service->internetService->speed }} of download</p>
+                        </div>
+                    @endif
 
-                @if ($user->service->internetService)
-                    <div class="col">
-                        <h2>Internet Service</h2>
-                        <p>Your internet service is our {{ ucfirst($user->service->internetService->name) }} plan, just for ${{ $user->service->internetService->price }} you can enjoy {{ $user->service->internetService->speed }} of download</p>
-                    </div>
-                @endif
-
-                @if ($user->service->cableService)
-                    <div class="col">
-                        <h2>Cable Service</h2>
-                        <p>Your cable service is our {{ ucfirst($user->service->cableService->name) }} package, just for ${{ $user->service->cableService->price }}</p>
-                        <p>
-                            <!-- aqui el drop down de los canales -->
-                            <div  class="row justify-content-md-center">
-                                <div class="btn-group">
-                                  <button type="button" class="btn btn-outline-info">See the channels</button>
-                                  <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                  </button>
-                                  <div class="dropdown-menu">
-                                    @foreach ($user->service->cableService->packages as $package)
-                                      <li class="dropdown-item">{{ $package->channel->name }}</li>    
-                                    @endforeach
-                                  </div>
+                    @if ($user->service->cableService)
+                        <div class="col">
+                            <h2>Cable Service</h2>
+                            <p>Your cable service is our {{ ucfirst($user->service->cableService->name) }} package, just for ${{ $user->service->cableService->price }}</p>
+                            <p>
+                                <!-- aqui el drop down de los canales -->
+                                <div  class="row justify-content-md-center">
+                                    <div class="btn-group">
+                                      <button type="button" class="btn btn-outline-info">See the channels</button>
+                                      <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                      </button>
+                                      <div class="dropdown-menu">
+                                        @foreach ($user->service->cableService->packages as $package)
+                                          <li class="dropdown-item">{{ $package->channel->name }}</li>    
+                                        @endforeach
+                                      </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </p>
-                    </div>
+                            </p>
+                        </div>
+                    @endif
+                    
+                    
+                    @if ($user->service->phoneService)
+                        <div class="col">
+                            <h2>Phone Service</h2>
+                            <p>Your phone service plan is our {{ ucfirst($user->service->phoneService->name) }} plan, just for ${{ $user->service->phoneService->price }} you have {{ $user->service->phoneService->plan_limit }} to all operators.</p>
+                        </div>
+                    @endif
                 @endif
                 
-
-                @if ($user->service->phoneService)
-                    <div class="col">
-                        <h2>Phone Service</h2>
-                        <p>Your phone service plan is our {{ ucfirst($user->service->phoneService->name) }} plan, just for ${{ $user->service->phoneService->price }} you have {{ $user->service->phoneService->plan_limit }} to all operators.</p>
-                    </div>
-                @endif
             </div>
         </div>
   

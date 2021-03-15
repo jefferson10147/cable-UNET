@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Service;
 use App\Models\InternetService;
 use App\Models\PhoneService;
@@ -18,9 +19,8 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        dd($services);
-
-        return view('services_list', compact('services'));
+        $user = Auth::user();
+        return view('services_list', compact('services', 'user'));
     }
 
     /**

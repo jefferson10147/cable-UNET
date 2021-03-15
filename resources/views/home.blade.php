@@ -19,7 +19,7 @@
           <ul class="navbar-nav mr-auto">
             
             <li class="nav-item active">
-              <a class="nav-link" href="{{ route('channels.schedules') }}">Schedules</a>
+              <a class="nav-link" href="{{ route('channels.schedules') }}">Programming Schedules</a>
             </li>
             
           </ul>
@@ -45,7 +45,7 @@
         <div class="position-relative overflow-hidden p-3 p-md-2 m-md-3 text-center bg-light">
             <div class="col-md-5 p-lg-5 mx-auto">
                 @if ($user->service)
-                    <h4 class="font-weight-normal"> {{ ucfirst($user->service->service_name) }} is your currently service, you have to pay ${{ $user->service->price }} per month</h4>
+                    <h2 class="font-weight-normal"> {{ ucfirst($user->service->service_name) }} is your currently service, you have to pay ${{ $user->service->price }} per month</h2>
                     <p class="lead font-weight-normal"> </p>
                     <a class="btn btn-outline-secondary" href="#"> Change my service </a>
 
@@ -104,7 +104,36 @@
             </div>
         </div>
   
-      </main>
+
+        @if (!$user->invoices->isEmpty())
+            <div class="container"> 
+                <div class="row">
+                    <div class="container mt-5">
+                        <h4  align="center">Your Invoices</h4>
+                    </div>
+    
+                    <table class="table table-sm mx-auto mt-1" style="width: 30%;"">
+                        <caption>Once you have paid the invoice, please notify administrators</caption>
+    
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+    
+                        <tbody>
+                            @foreach ($user->invoices as $invoice)
+                                <tr>
+                                    <td>  ${{ $invoice->amount }} </td>
+                                </tr>
+                            @endforeach            
+                        </tbody>
+                    </table>
+                </div>  
+                
+            </div>
+        @endif
+    </main>
   
       
 </body>

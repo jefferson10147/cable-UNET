@@ -27,7 +27,7 @@ Route::get('/save/program', [ProgramController::class, 'saveProgram'])->name('pr
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => ['auth', 'CheckRole']], function () {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin_home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminHome');
 });
 

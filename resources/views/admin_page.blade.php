@@ -34,9 +34,9 @@
               <a class="nav-link" href="#">Invoices</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0" method="POST">
+          <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('logout') }}">
             @csrf
-            <a href="{{ route('logout') }}"><button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button></a>
+            <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
           </form>
         </div>
     </nav>

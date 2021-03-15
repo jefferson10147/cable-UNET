@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\CableService;
 use App\Models\InternetService;
 use App\Models\PhoneService;
@@ -27,7 +28,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+
+        if ($user->role == 1){
+            return redirect('admin_home');
+        }else{
+            return redirect('home');
+        }
+        
     }
 
     public function adminHome()

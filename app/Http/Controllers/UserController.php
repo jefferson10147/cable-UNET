@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Service;
 
 class UserController extends Controller
 {
@@ -87,5 +88,22 @@ class UserController extends Controller
     {
         User::destroy($id);
         return redirect('users');
+    }
+
+    public function changeUserService($id)
+    {
+        $user = User::find($id);
+        $services = Service::all();
+
+        return view('update_user_service', compact('user', 'services'));
+    }
+
+    public function updateUserService ($id, $service_id)
+    {
+        $user = User::find($id);
+        $user->service_id = $service_id;
+        $user->save();
+        /* insertar en la tabla de peticiones */
+        return redirect('home'); 
     }
 }

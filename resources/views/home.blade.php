@@ -47,7 +47,7 @@
                 @if ($user->service)
                     <h2 class="font-weight-normal"> {{ ucfirst($user->service->service_name) }} is your currently service, you have to pay ${{ $user->service->price }} per month</h2>
                     <p class="lead font-weight-normal"> </p>
-                    <a class="btn btn-outline-secondary" href="#"> Change my service </a>
+                    <a class="btn btn-outline-secondary" href="{{ route('users.changeService', ['id' => $user->id])}}"> Change my service </a>
 
                 @else
 

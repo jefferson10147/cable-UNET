@@ -11,6 +11,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PackageController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RequestController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,14 +33,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin_home', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('adminHome');
 });
 
-
-
 Route::get('channels/show_schedules', [ChannelController::class, 'channelsSchedules'])->name('channels.schedules');
 Route::get('invoices/generate', [InvoiceController::class, 'generateInvoices'])->name('invoices.generateInvoices');
 Route::get('users/update_service/{id}', [UserController::class, 'changeUserService'])->name('users.changeService');
 Route::get('users/{id}/change/{service_id}', [UserController::class, 'updateUserService'])->name('users.updateService');
-
-
 
 Route::resource('/programs', ProgramController::class);
 Route::resource('/channels', ChannelController::class);
@@ -50,7 +47,7 @@ Route::resource('/services', ServiceController::class);
 Route::resource('/packages', PackageController::class);
 Route::resource('/users', UserController::class);
 Route::resource('/invoices', InvoiceController::class);
-
+// Route::resource('/users_requests', UsersRequestController::class);
 
 Route::get('programs/add_channel/{id}', [ProgramController::class, 'addChannel'])->name('programs.add_channel');
 Route::get('program/{id}/channel/{channel_id}', [ProgramController::class, 'updateProgramChannel'])->name('programs.updateProgramChannel');

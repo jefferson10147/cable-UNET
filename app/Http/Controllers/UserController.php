@@ -101,12 +101,6 @@ class UserController extends Controller
 
     public function updateUserService ($id, $service_id)
     {
-        /*
-        $user = User::find($id);
-        $user->service_id = $service_id;
-        $user->save();
-
-        /* insertar en la tabla de peticiones */
         ChangeRequest::create([
             'user_id' => $id,
             'service_id' => $service_id 

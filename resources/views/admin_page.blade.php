@@ -53,7 +53,7 @@
   <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 table-active pt-2">
       @foreach ($services as $service)
           <div class="col">
-              <div class="card mb-4 shadow-sm">
+              <div class="card mb-4 shadow-sm border-info">
                   <div class="card-header">
                     <h1 class="my-0 fw-normal">{{ ucfirst($service->service_name) }}</h1>
                   </div>
@@ -106,7 +106,7 @@
   <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 table-active pt-2">
       @foreach ($internetServices as $internetService)
           <div class="col">
-              <div class="card mb-4 shadow-sm">
+              <div class="card mb-4 shadow-sm border-info">
                   <div class="card-header">
                     <h1 class="my-0 fw-normal">{{ ucfirst($internetService->name) }}</h1>
                   </div>
@@ -149,7 +149,7 @@
   <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 table-active pt-2">
       @foreach ($phoneServices as $phoneService)
           <div class="col">
-              <div class="card mb-4 shadow-sm">
+              <div class="card mb-4 shadow-sm border-info">
                   <div class="card-header">
                     <h1 class="my-0 fw-normal">{{ ucfirst($phoneService->name) }}</h1>
                   </div>
@@ -193,7 +193,7 @@
   <div class="row row-cols-1 row-cols-md-3 mb-1 text-center mx-2 table-active pt-2">
       @foreach ($cableServices as $cableService)
           <div class="col">
-              <div class="card mb-4 shadow-sm">
+              <div class="card mb-4 shadow-sm border-info">
                   <div class="card-header">
                     <h1 class="my-0 fw-normal">{{ ucfirst($cableService->name) }}</h1>
                   </div>

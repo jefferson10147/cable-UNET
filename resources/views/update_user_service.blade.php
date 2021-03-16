@@ -36,7 +36,7 @@
       <h1 class="mt-5" align="center"><strong>Update your service</strong></h1>
   </div>
   <div class="container">
-    <div class="card">
+    <div class="card border-info">
       <div class="card-header">
         <h2 class="my-0 fw-normal">{{ ucfirst($user->service->service_name) }} package is your current service</h2>
       </div>
@@ -67,7 +67,7 @@
       @foreach ($services as $service)
           @if ($service->id != $user->service->id)
               <div class="col">
-                  <div class="card mb-4 shadow-sm text-center">
+                  <div class="card mb-4 shadow-sm text-center border-info">
                       <div class="card-header">
                         <h2 class="my-0 fw-normal">{{ ucfirst($service->service_name) }}</h2>
                       </div>

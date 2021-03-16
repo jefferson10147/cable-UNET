@@ -39,7 +39,7 @@
       <div class="row">
         @foreach ($services as $service)
             <div class="col">
-                <div class="card mb-4 shadow-sm text-center">
+                <div class="card mb-4 shadow-sm text-center border-info">
                     <div class="card-header">
                       <h2 class="my-0 fw-normal">{{ ucfirst($service->service_name) }}</h2>
                     </div>

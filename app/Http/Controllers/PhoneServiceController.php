@@ -45,7 +45,7 @@ class PhoneServiceController extends Controller
         ]);
         PhoneService::create($request->all());
         
-        return redirect('phone_services/create')->with('succes', 'The phone service have been correctly registered');
+        return redirect('phone_services/create')->with('success', 'The phone service have been correctly registered');
     }
 
     /**

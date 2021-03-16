@@ -44,6 +44,12 @@
           </form>
         </div>
     </nav>
+    
+    @if (session('success'))
+      <div class="alert alert-success">
+          {{ session('success') }}
+      </div>
+    @endif
 
     <div class="content">
         <div class="container">

@@ -45,7 +45,7 @@ class CableServiceController extends Controller
         ]);
         CableService::create($request->all());
 
-        return redirect('cable_services/create')->with('succes', 'The cable service have been correctly registered');
+        return redirect('cable_services/create')->with('success', 'The cable service have been correctly registered');
     }
 
     /**

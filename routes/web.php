@@ -14,7 +14,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChangeRequestController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app_home');
 });
 
 //Route::get('/save/internet_service', [InternetServiceController::class, 'saveInternetService'])->name('internetService.save');

@@ -50,7 +50,7 @@
   <div class="container">
     <h1 class="mt-5" align="center"><strong>Services</strong></h1>
   </div>
-  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 table-active pt-2">
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 pt-2">
       @foreach ($services as $service)
           <div class="col">
               <div class="card mb-4 shadow-sm border-info">
@@ -103,7 +103,7 @@
   <div class="container">
     <h1 class="mt-5" align="center"><strong>Internet Services</strong></h1>
   </div>
-  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 table-active pt-2">
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 pt-2">
       @foreach ($internetServices as $internetService)
           <div class="col">
               <div class="card mb-4 shadow-sm border-info">
@@ -146,7 +146,7 @@
   <div class="container mt-5">
     <h1  align="center"><strong>Phone Services</strong></h1>
   </div>
-  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 table-active pt-2">
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center mx-2 pt-2">
       @foreach ($phoneServices as $phoneService)
           <div class="col">
               <div class="card mb-4 shadow-sm border-info">
@@ -190,7 +190,7 @@
   <div class="container mt-5">
     <h1  align="center"><strong>Cable Services</strong></h1>
   </div>
-  <div class="row row-cols-1 row-cols-md-3 mb-1 text-center mx-2 table-active pt-2">
+  <div class="row row-cols-1 row-cols-md-3 mb-1 text-center mx-2 pt-2">
       @foreach ($cableServices as $cableService)
           <div class="col">
               <div class="card mb-4 shadow-sm border-info">
@@ -247,6 +247,7 @@
       </div>
     </div>
   </div>
+  <div class="container mt-5"></div>
 
 </body>
 </html>

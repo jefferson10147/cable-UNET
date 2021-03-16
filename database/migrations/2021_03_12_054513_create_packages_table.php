@@ -16,9 +16,9 @@ class CreatePackagesTable extends Migration
         Schema::create('packages', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cable_service_id');
-            $table->foreign('cable_service_id')->references('id')->on('cable_services')->onDelete('cascade')->onDelete('cascade');
+            $table->foreign('cable_service_id')->references('id')->on('cable_services')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('channel_id');
-            $table->foreign('channel_id')->references('id')->on('channels')->onDelete('cascade')->onDelete('cascade');
+            $table->foreign('channel_id')->references('id')->on('channels')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

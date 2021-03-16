@@ -16,7 +16,7 @@ class CreateProgramsTable extends Migration
         Schema::create('programs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('channel_id');
-            $table->foreign('channel_id')->references('id')->on('channels')->onDelete('cascade')->onDelete('cascade');
+            $table->foreign('channel_id')->references('id')->on('channels')->onDelete('cascade')->onUpdate('cascade');
             $table->date('date');
             $table->string('program_name', 30);
             $table->time('starts_at');

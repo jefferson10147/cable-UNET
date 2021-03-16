@@ -16,11 +16,11 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('internet_service_id')->nullable();
-            $table->foreign('internet_service_id')->references('id')->on('internet_services')->onDelete('cascade')->onDelete('cascade');
+            $table->foreign('internet_service_id')->references('id')->on('internet_services')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('phone_service_id')->nullable();
-            $table->foreign('phone_service_id')->references('id')->on('phone_services')->onDelete('cascade')->onDelete('cascade');
+            $table->foreign('phone_service_id')->references('id')->on('phone_services')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('cable_service_id')->nullable();
-            $table->foreign('cable_service_id')->references('id')->on('cable_services')->onDelete('cascade')->onDelete('cascade');
+            $table->foreign('cable_service_id')->references('id')->on('cable_services')->onDelete('cascade')->onUpdate('cascade');
             $table->float('price')->required();
         });
     }

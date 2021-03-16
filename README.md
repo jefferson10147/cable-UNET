@@ -53,3 +53,8 @@ $ php artisan migrate
 ```
 $ php artisan serve
 ```
+
+You can import a test database with test records using database.sql file, it's located in root directory
+```
+$ mysql -u root -p < database.sql
+```

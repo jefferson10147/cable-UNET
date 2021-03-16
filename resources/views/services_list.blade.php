@@ -6,12 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <title>Document</title>
+    <title>Services | List</title>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark  sticky-top">
+    <a class="navbar-brand" href="{{ route('home') }}">Cable Unet</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item active">
+          <a class="nav-link" href="{{ route('channels.schedules') }}">Programming Schedules</a>
+        </li>
+        
+      </ul>
+      <form class="form-inline my-2 my-lg-0" method="POST" action="{{ route('logout') }}">
+        @csrf
+        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Logout</button>
+      </form>
+    </div>
+  </nav>
+
     <div class="container">
-        <h1 class="mt-5" align="center"><strong>Choose your new package</strong></h1>
-      </div>
+      <h1 class="mt-5" align="center"><strong>Choose your new package</strong></h1>
+    </div>
       
     <div class="container mt-3">
       <div class="row">

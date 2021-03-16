@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 -- Table structure for table `cable_services`
 --
 
-CREATE DATABASE IF NOT EXISTS `laravel`;
+CREATE DATABASE IF NOT EXISTS `cable_unet`;
 
-USE `laravel`;
+USE `cable_unet`;
 
 CREATE TABLE `cable_services` (
   `id` bigint(20) UNSIGNED NOT NULL,

@@ -1,6 +1,6 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-## About Laravel
+## About this app
 
 This application is called "Cable UNET" and it is a project for the Programming II course. This project was made with
 Laravel, which is php framework, and it also uses MySQL as database and css framework's Bootstrap. 
